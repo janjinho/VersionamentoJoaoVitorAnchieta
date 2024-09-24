@@ -1,4 +1,3 @@
-
 function displayUserName() {
   const params = new URLSearchParams(window.location.search);
   const userName = params.get('name');
@@ -58,17 +57,33 @@ const categorySelect = document.getElementById('category-select');
 
 categorySelect.addEventListener('mouseover', function() {
   const options = categorySelect.options;
-
   for (let i = 0; i < options.length; i++) {
-    options[i].addEventListener('mouseenter', function() {
-      const hoverColor = options[i].getAttribute('data-color');
-      categorySelect.style.backgroundColor = hoverColor;
-    });
+    const option = options[i];
+    const color = option.getAttribute('data-color');
+    option.style.backgroundColor = color;
   }
 });
 
-categorySelect.addEventListener('mouseleave', function() {
+categorySelect.addEventListener('change', function() {
   const selectedOption = categorySelect.options[categorySelect.selectedIndex];
   const selectedColor = selectedOption.getAttribute('data-color');
   categorySelect.style.backgroundColor = selectedColor;
+});
+
+document.getElementById('filter-category-select').addEventListener('change', function() {
+  const selectedCategory = this.value;
+
+  const allTasks = document.querySelectorAll('#morning-tasks li, #afternoon-tasks li, #night-tasks li');
+
+  allTasks.forEach(function(task) {
+    if (selectedCategory === 'todas') {
+      task.style.display = 'block';
+    } else {
+      if (task.classList.contains(selectedCategory)) {
+        task.style.display = 'block';
+      } else {
+        task.style.display = 'none';
+      }
+    }
+  });
 });
