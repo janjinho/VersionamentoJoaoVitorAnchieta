@@ -107,3 +107,28 @@ ul li {
 ul li:hover {
     transform: scale(0.95);
 }
+li.estudos {
+    background-color: #659cd78c; 
+  }
+  li.trabalho {
+    background-color: #b588528c; 
+  }
+  li.saude-mental {
+    background-color: #966fd288; 
+  }
+  li.saude-fisica {
+    background-color: #84d757a0; 
+  }
+  li.lazer {
+    background-color: #e1db39bd;
+  }
+  li.casa {
+    background-color: #de569e8f; 
+  }
+  li.urgente {
+    background-color: #ff6666;
+  }
+  li.nenhuma {
+    background-color: #e7e7e7;
+  }
+  

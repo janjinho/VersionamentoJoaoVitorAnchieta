@@ -19,19 +19,20 @@
   <script>
 
 function redirectToRoutine() {
-      const name = document.getElementById('name-input').value.trim();
-      if (name !== '') {
-        window.location.href = `rotina.html?name=${encodeURIComponent(name)}`;
-      }
-    }
+  const name = document.getElementById('name-input').value.trim();
+  if (name !== '') {
+    window.location.href = `rotina.html?name=${encodeURIComponent(name)}`;
+  }
+}
 
-    document.getElementById('start-routine').addEventListener('click', redirectToRoutine);
+document.getElementById('start-routine').addEventListener('click', redirectToRoutine);
 
-    document.getElementById('name-input').addEventListener('keypress', function(event) {
-      if (event.key === 'Enter') {
-        redirectToRoutine();
-      }
-    });
+document.getElementById('name-input').addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    redirectToRoutine();
+  }
+});
+
   </script>
 </body>
 </html>

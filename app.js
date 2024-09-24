@@ -1,83 +1,74 @@
 
-function addTask() {
-    const task = document.getElementById('task-input').value.trim(); 
-    const time = document.getElementById('time-select').value;
- 
-    if (task === '') return;
-
-    document.getElementById('task-input').value = '';
-
-    let taskList;
-    if (time === 'manhã') {
-      taskList = document.getElementById('morning-tasks');
-    } else if (time === 'tarde') {
-      taskList = document.getElementById('afternoon-tasks');
-    } else if (time === 'noite') {
-      taskList = document.getElementById('night-tasks');
-    }
- 
-    const listItem = document.createElement('li');
-    listItem.textContent = task;
- 
-    listItem.addEventListener('click', function() {
-      this.remove();
-    });
-  
-    taskList.appendChild(listItem);
-  }
- 
-  document.getElementById('add-task').addEventListener('click', addTask);
-
-  document.getElementById('task-input').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-      event.preventDefault(); 
-      addTask();
-    }
-  });
-
-   function getQueryParameter(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-  }
-
-  const userName = getQueryParameter('name');
-
+function displayUserName() {
+  const params = new URLSearchParams(window.location.search);
+  const userName = params.get('name');
   if (userName) {
     document.getElementById('routine-title').textContent = `${userName}'s Routine`;
   }
+}
 
-  function addTask() {
-    const task = document.getElementById('task-input').value.trim(); 
-    const time = document.getElementById('time-select').value;
+window.addEventListener('load', function() {
+  displayUserName();
 
-    if (task === '') return;
+  const categorySelect = document.getElementById('category-select');
+  const initialOption = categorySelect.options[categorySelect.selectedIndex];
+  const initialColor = initialOption.getAttribute('data-color');
+  categorySelect.style.backgroundColor = initialColor;
+});
 
-    document.getElementById('task-input').value = '';
+function addTask() {
+  const task = document.getElementById('task-input').value.trim(); 
+  const time = document.getElementById('time-select').value;
+  const category = document.getElementById('category-select').value;
 
-    let taskList;
-    if (time === 'manhã') {
-      taskList = document.getElementById('morning-tasks');
-    } else if (time === 'tarde') {
-      taskList = document.getElementById('afternoon-tasks');
-    } else if (time === 'noite') {
-      taskList = document.getElementById('night-tasks');
-    }
+  if (task === '') return;
 
-    const listItem = document.createElement('li');
-    listItem.textContent = task;
+  document.getElementById('task-input').value = '';
 
-    listItem.addEventListener('click', function() {
-      this.remove();
-    });
-
-    taskList.appendChild(listItem);
+  let taskList;
+  if (time === 'manhã') {
+    taskList = document.getElementById('morning-tasks');
+  } else if (time === 'tarde') {
+    taskList = document.getElementById('afternoon-tasks');
+  } else if (time === 'noite') {
+    taskList = document.getElementById('night-tasks');
   }
 
-  document.getElementById('add-task').addEventListener('click', addTask);
+  const listItem = document.createElement('li');
+  listItem.textContent = task;
+  listItem.classList.add(category);
 
-  document.getElementById('task-input').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      addTask();
-    }
+  listItem.addEventListener('click', function() {
+    this.remove();
   });
+
+  taskList.appendChild(listItem);
+}
+
+document.getElementById('add-task').addEventListener('click', addTask);
+
+document.getElementById('task-input').addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    addTask();
+  }
+});
+
+const categorySelect = document.getElementById('category-select');
+
+categorySelect.addEventListener('mouseover', function() {
+  const options = categorySelect.options;
+
+  for (let i = 0; i < options.length; i++) {
+    options[i].addEventListener('mouseenter', function() {
+      const hoverColor = options[i].getAttribute('data-color');
+      categorySelect.style.backgroundColor = hoverColor;
+    });
+  }
+});
+
+categorySelect.addEventListener('mouseleave', function() {
+  const selectedOption = categorySelect.options[categorySelect.selectedIndex];
+  const selectedColor = selectedOption.getAttribute('data-color');
+  categorySelect.style.backgroundColor = selectedColor;
+});

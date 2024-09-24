@@ -8,16 +8,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header><h2 id="routine-title"></h3></header>
+  <header><h2 id="routine-title"></h2></header>
   <div class="container">
-    
-
     <div class="input-area">
       <input type="text" id="task-input" placeholder="Escreva sua tarefa">
       <select id="time-select">
         <option value="manhã">Manhã</option>
         <option value="tarde">Tarde</option>
         <option value="noite">Noite</option>
+      </select>
+      <select id="category-select">
+        <option value="nenhuma" data-color="#e7e7e7">Nenhuma Categoria</option>
+        <option value="estudos" data-color="#659cd78c">Estudos</option>
+        <option value="trabalho" data-color="#b588528c">Trabalho</option>
+        <option value="saude-mental" data-color="#966fd288">Saúde Mental</option>
+        <option value="saude-fisica" data-color="#84d757a0">Saúde Física</option>
+        <option value="lazer" data-color="#e1db39bd">Lazer</option>
+        <option value="casa" data-color="#de569e8f">Casa</option>
+        <option value="urgente" data-color="#ff6666">Urgente</option>
       </select>
       <button id="add-task">Adicionar Tarefa</button>
     </div>
