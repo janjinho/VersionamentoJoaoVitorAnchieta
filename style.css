@@ -178,3 +178,43 @@ li.nenhuma {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.dark-mode li.estudos {
+    background-color: #659cd745; 
+    color: #f4f4f4;
+}
+
+.dark-mode li.trabalho {
+    background-color: #b588524b; 
+    color: #f4f4f4;
+}
+
+.dark-mode li.saude-mental {
+    background-color: #976fd248;
+    color: #f4f4f4; 
+}
+
+.dark-mode li.saude-fisica {
+    background-color: #84d75742; 
+    color: #f4f4f4;
+}
+
+.dark-mode li.lazer {
+    background-color: #e1db3945;
+    color: #f4f4f4;
+}
+
+.dark-mode li.casa {
+    background-color: #de569f41; 
+    color: #f4f4f4;
+}
+
+.dark-mode li.urgente {
+    background-color: #ff66663a;
+    color: #f4f4f4;
+}
+
+.dark-mode li.nenhuma {
+    background-color: #e7e7e744;
+    color: #f4f4f4;
+}
