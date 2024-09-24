@@ -13,9 +13,13 @@
     <div class="input-area">
       <input type="text" id="task-input" placeholder="Escreva sua tarefa">
       <select id="time-select">
-        <option value="manhã">Manhã</option>
-        <option value="tarde">Tarde</option>
-        <option value="noite">Noite</option>
+        <option value="segunda">Segunda</option>
+        <option value="terça">Terça</option>
+        <option value="quarta">Quarta</option>
+        <option value="quinta">Quinta</option>
+        <option value="sexta">Sexta</option>
+        <option value="sábado">Sábado</option>
+        <option value="domingo">Domingo</option>
       </select>
       <select id="category-select">
         <option value="nenhuma" data-color="#e7e7e7">Nenhuma Categoria</option>
@@ -31,17 +35,33 @@
     </div>
 
     <div class="task-container">
-      <div class="task-section" id="morning-section">
-        <h2>☀️🪴Manhã🍳🧘☕️</h2>
-        <ul id="morning-tasks"></ul>
+      <div class="task-section day" id="monday-section">
+        <h2>Segunda-feira</h2>
+        <ul id="monday-tasks"></ul>
       </div>
-      <div class="task-section" id="afternoon-section">
-        <h2>🌇⋆⁺₊Tarde🎧𓍢ִ໋🌷͙֒</h2>
-        <ul id="afternoon-tasks"></ul>
+      <div class="task-section day" id="tuesday-section">
+        <h2>Terça-feira</h2>
+        <ul id="tuesday-tasks"></ul>
       </div>
-      <div class="task-section" id="night-section">
-        <h2>💤✧🌙Noite🌃🧸✩₊˚</h2>
-        <ul id="night-tasks"></ul>
+      <div class="task-section day" id="wednesday-section">
+        <h2>Quarta-feira</h2>
+        <ul id="wednesday-tasks"></ul>
+      </div>
+      <div class="task-section day" id="thursday-section">
+        <h2>Quinta-feira</h2>
+        <ul id="thursday-tasks"></ul>
+      </div>
+      <div class="task-section day short" id="friday-section">
+        <h2>Sexta-feira</h2>
+        <ul id="friday-tasks"></ul>
+      </div>
+      <div class="task-section day short" id="saturday-section">
+        <h2>Sábado</h2>
+        <ul id="saturday-tasks"></ul>
+      </div>
+      <div class="task-section day short" id="sunday-section">
+        <h2>Domingo</h2>
+        <ul id="sunday-tasks"></ul>
       </div>
     </div>
   </div>

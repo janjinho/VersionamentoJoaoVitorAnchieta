@@ -18,7 +18,7 @@ window.addEventListener('load', function() {
 
 function addTask() {
   const task = document.getElementById('task-input').value.trim(); 
-  const time = document.getElementById('time-select').value;
+  const time = document.getElementById('time-select').value;  // Agora usa dias da semana
   const category = document.getElementById('category-select').value;
 
   if (task === '') return;
@@ -26,12 +26,28 @@ function addTask() {
   document.getElementById('task-input').value = '';
 
   let taskList;
-  if (time === 'manhã') {
-    taskList = document.getElementById('morning-tasks');
-  } else if (time === 'tarde') {
-    taskList = document.getElementById('afternoon-tasks');
-  } else if (time === 'noite') {
-    taskList = document.getElementById('night-tasks');
+  switch(time) {
+    case 'segunda':
+      taskList = document.getElementById('monday-tasks');
+      break;
+    case 'terça':
+      taskList = document.getElementById('tuesday-tasks');
+      break;
+    case 'quarta':
+      taskList = document.getElementById('wednesday-tasks');
+      break;
+    case 'quinta':
+      taskList = document.getElementById('thursday-tasks');
+      break;
+    case 'sexta':
+      taskList = document.getElementById('friday-tasks');
+      break;
+    case 'sábado':
+      taskList = document.getElementById('saturday-tasks');
+      break;
+    case 'domingo':
+      taskList = document.getElementById('sunday-tasks');
+      break;
   }
 
   const listItem = document.createElement('li');
@@ -46,7 +62,6 @@ function addTask() {
 }
 
 document.getElementById('add-task').addEventListener('click', addTask);
-
 document.getElementById('task-input').addEventListener('keypress', function(event) {
   if (event.key === 'Enter') {
     event.preventDefault();
@@ -58,7 +73,6 @@ const categorySelect = document.getElementById('category-select');
 
 categorySelect.addEventListener('mouseover', function() {
   const options = categorySelect.options;
-
   for (let i = 0; i < options.length; i++) {
     options[i].addEventListener('mouseenter', function() {
       const hoverColor = options[i].getAttribute('data-color');
