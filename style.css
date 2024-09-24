@@ -6,16 +6,34 @@
 }
 
 body {
+    background-image: url(fundo2.jpg);
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #dddddd;
     padding: 20px;
+    justify-content: center;
+    align-items: center;
+    
 }
+header{
+    padding: 20px;
+    border-radius: 25px;
+    background-color: rgba(138, 215, 155, 0.93);
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    
+}
+
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-    background-color: rgb(96, 203, 119);
+    background-color: rgba(138, 215, 155, 0.93);
     padding: 20px;
     border-radius: 20px;
 }
@@ -50,12 +68,13 @@ button {
 
 button:hover {
     transform: scale(0.95);
-    background-color:  rgb(137, 245, 161);
+    background-color: rgba(212, 255, 221, 0.491);
 }
 .task-container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    margin-bottom: 20px;
 }
 
 .task-section {
