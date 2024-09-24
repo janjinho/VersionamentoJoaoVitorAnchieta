@@ -72,3 +72,16 @@ categorySelect.addEventListener('mouseleave', function() {
   const selectedColor = selectedOption.getAttribute('data-color');
   categorySelect.style.backgroundColor = selectedColor;
 });
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  const button = document.getElementById('dark-mode-toggle');
+  if (isDarkMode) {
+    button.textContent = '☀️';
+  } else {
+    button.textContent = '🌙';
+  }
+}
+
+document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
