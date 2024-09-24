@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rastreador de Hábitos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="routine-title">Minha Rotina</h1>
+
+    <div class="input-area">
+      <input type="text" id="task-input" placeholder="Escreva sua tarefa">
+      <select id="time-select">
+        <option value="manhã">Manhã</option>
+        <option value="tarde">Tarde</option>
+        <option value="noite">Noite</option>
+      </select>
+      <button id="add-task">Adicionar Tarefa</button>
+    </div>
+
+    <div class="task-container">
+      <div class="task-section" id="morning-section">
+        <h2>Manhã</h2>
+        <ul id="morning-tasks"></ul>
+      </div>
+      <div class="task-section" id="afternoon-section">
+        <h2>Tarde</h2>
+        <ul id="afternoon-tasks"></ul>
+      </div>
+      <div class="task-section" id="night-section">
+        <h2>Noite</h2>
+        <ul id="night-tasks"></ul>
+      </div>
+    </div>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
