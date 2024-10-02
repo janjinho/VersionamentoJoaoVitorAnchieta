@@ -17,13 +17,10 @@ header {
     padding: 20px;
     border-radius: 25px;
     background-color: rgba(138, 215, 155, 0.93);
-    margin-bottom: 30px;
-    align-items: center;
-    justify-content: center;
     max-width: 1200px;
     text-align: center;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Mantendo a margem inferior */
 }
 
 .container {
@@ -33,6 +30,7 @@ header {
     background-color: rgba(138, 215, 155, 0.93);
     padding: 20px;
     border-radius: 20px;
+    margin-top: 20px;
 }
 
 h1 {
@@ -43,8 +41,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-input,
-select {
+input, select {
     padding: 10px;
     margin: 5px;
     font-size: 16px;
@@ -52,6 +49,7 @@ select {
     background-color: #ffffff;
     border: none;
     cursor: pointer;
+    color: #000;
 }
 
 button {
@@ -147,5 +145,111 @@ li.urgente {
 }
 
 li.nenhuma {
+    background-color: #e7e7e7;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode header,
+.dark-mode .container {
+    background-color: rgba(50, 50, 50, 0.93);
+}
+
+.dark-mode input, 
+.dark-mode select, 
+.dark-mode button {
+    background-color: #505050;
+    color: #e0e0e0;
+}
+
+.dark-mode select {
+    color: #000000;
+}
+
+.dark-mode .task-section {
+    background-color: #121212;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode ul li {
+    color: #000000;
+}
+
+.dark-mode li.estudos {
+    background-color: #659cd745;
+    color: #f4f4f4;
+}
+
+.dark-mode li.trabalho {
+    background-color: #b588524b;
+    color: #f4f4f4;
+}
+
+.dark-mode li.saude-mental {
+    background-color: #976fd248;
+    color: #f4f4f4;
+}
+
+.dark-mode li.saude-fisica {
+    background-color: #84d75742;
+    color: #f4f4f4;
+}
+
+.dark-mode li.lazer {
+    background-color: #e1db3945;
+    color: #f4f4f4;
+}
+
+.dark-mode li.casa {
+    background-color: #de569f41;
+    color: #f4f4f4;
+}
+
+.dark-mode li.urgente {
+    background-color: #ff66663a;
+    color: #f4f4f4;
+}
+
+.dark-mode li.nenhuma {
+    background-color: #e7e7e744;
+    color: #f4f4f4;
+}
+#category-select option {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#category-select option[value="estudos"] {
+    background-color: #659cd78c;
+}
+
+#category-select option[value="trabalho"] {
+    background-color: #b588528c;
+}
+
+#category-select option[value="saude-mental"] {
+    background-color: #966fd288;
+}
+
+#category-select option[value="saude-fisica"] {
+    background-color: #84d757a0;
+}
+
+#category-select option[value="lazer"] {
+    background-color: #e1db39bd;
+}
+
+#category-select option[value="casa"] {
+    background-color: #de569e8f;
+}
+
+#category-select option[value="urgente"] {
+    background-color: #ff6666;
+}
+
+#category-select option[value="nenhuma"] {
     background-color: #e7e7e7;
 }
