@@ -6,7 +6,7 @@ function displayUserName() {
   }
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   displayUserName();
 
   const categorySelect = document.getElementById('category-select');
@@ -16,7 +16,7 @@ window.addEventListener('load', function() {
 });
 
 function addTask() {
-  const task = document.getElementById('task-input').value.trim(); 
+  const task = document.getElementById('task-input').value.trim();
   const time = document.getElementById('time-select').value;
   const category = document.getElementById('category-select').value;
 
@@ -37,7 +37,7 @@ function addTask() {
   listItem.textContent = task;
   listItem.classList.add(category);
 
-  listItem.addEventListener('click', function() {
+  listItem.addEventListener('click', function () {
     this.remove();
   });
 
@@ -46,7 +46,7 @@ function addTask() {
 
 document.getElementById('add-task').addEventListener('click', addTask);
 
-document.getElementById('task-input').addEventListener('keypress', function(event) {
+document.getElementById('task-input').addEventListener('keypress', function (event) {
   if (event.key === 'Enter') {
     event.preventDefault();
     addTask();
@@ -55,7 +55,7 @@ document.getElementById('task-input').addEventListener('keypress', function(even
 
 const categorySelect = document.getElementById('category-select');
 
-categorySelect.addEventListener('mouseover', function() {
+categorySelect.addEventListener('mouseover', function () {
   const options = categorySelect.options;
   for (let i = 0; i < options.length; i++) {
     const option = options[i];
@@ -64,18 +64,18 @@ categorySelect.addEventListener('mouseover', function() {
   }
 });
 
-categorySelect.addEventListener('change', function() {
+categorySelect.addEventListener('change', function () {
   const selectedOption = categorySelect.options[categorySelect.selectedIndex];
   const selectedColor = selectedOption.getAttribute('data-color');
   categorySelect.style.backgroundColor = selectedColor;
 });
 
-document.getElementById('filter-category-select').addEventListener('change', function() {
+document.getElementById('filter-category-select').addEventListener('change', function () {
   const selectedCategory = this.value;
 
   const allTasks = document.querySelectorAll('#morning-tasks li, #afternoon-tasks li, #night-tasks li');
 
-  allTasks.forEach(function(task) {
+  allTasks.forEach(function (task) {
     if (selectedCategory === 'todas') {
       task.style.display = 'block';
     } else {
